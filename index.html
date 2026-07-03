@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -25,7 +24,6 @@ body {
     linear-gradient(#0400ff, #000);
   color: white;
   font-family: Verdana, sans-serif;
-  overflow-x: hidden;
 }
 
 /* HEADER */
@@ -35,12 +33,6 @@ body {
   padding: 20px;
   border-bottom: 4px ridge white;
   text-align: center;
-  animation: flash 4s infinite linear;
-}
-
-@keyframes flash {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
 }
 
 .header h1 {
@@ -82,7 +74,6 @@ body {
 .about-button {
   display: block;
   margin-top: 15px;
-  margin-bottom: 15px;
   padding: 12px;
   text-align: center;
   background: black;
@@ -95,6 +86,26 @@ body {
 
 .about-button:hover {
   background: hotpink;
+  color: black;
+}
+
+/* RETRO MUSIC BUTTON */
+
+.music-button {
+  display: block;
+  margin-top: 15px;
+  padding: 12px;
+  text-align: center;
+  background: black;
+  border: 3px ridge cyan;
+  color: yellow;
+  font-family: 'VT323', monospace;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.music-button:hover {
+  background: cyan;
   color: black;
 }
 
@@ -132,16 +143,12 @@ body {
 }
 
 .window-header {
-  background: linear-gradient(to right, navy, blue);
+  background: navy;
   color: white;
   padding: 8px;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
-}
-
-.window-content {
-  padding: 15px;
 }
 
 /* PROJECTS */
@@ -168,7 +175,6 @@ body {
   transform: rotate(-2deg) scale(1.03);
 }
 
-/* ✅ FIXED IMAGE RULE */
 .project img {
   width: 100%;
   height: 250px;
@@ -200,41 +206,14 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* MARQUEE */
-
-marquee {
-  background: yellow;
-  color: red;
-  padding: 10px;
-  font-weight: bold;
-  border-top: 2px solid red;
-  border-bottom: 2px solid red;
-}
-
-@media(max-width: 900px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-}
-
 </style>
-
 </head>
 
 <body>
 
-<marquee scrollamount="12">
-★ WELCOME TO MY DIGITAL BRAIN ★ BEST VIEWED ON INTERNET EXPLORER ★
-</marquee>
-
 <div class="header">
-
   <h1>LILYLEMIERE.COM</h1>
-
-  <div class="status">
-    currently listening to: Masayoshi Takanaka ✩°｡⋆
-  </div>
-
+  <div class="status">currently listening to: Masayoshi Takanaka ✩°｡⋆</div>
 </div>
 
 <div class="container">
@@ -248,16 +227,12 @@ marquee {
       ABOUT_ME.exe
     </a>
 
-    <p>
-      creative advertiser <br>
-      artist <br>
-      music maestro <br>
-      beer enthusiast
-    </p>
+    <button class="music-button" id="playMusic">
+      ▶ PLAY MUSIC
+    </button>
 
     <div class="music-player">
-      ▶ NOW PLAYING <br>
-      BREEZIN'.mp3
+      NOW PLAYING: BREEZIN'.mp3
     </div>
 
     <div class="counter">
@@ -270,10 +245,8 @@ marquee {
   <div class="main">
 
     <div class="window">
-
       <div class="window-header">
-        <span>TOP PROJECTS.exe</span>
-        <span>✕</span>
+        TOP PROJECTS.exe
       </div>
 
       <div class="window-content">
@@ -284,7 +257,6 @@ marquee {
             <div class="project">
               <img src="images_/aoopen.png">
               <h3>Aus_0p3n.zip</h3>
-              <p>Australian Open "Hits Different"</p>
             </div>
           </a>
 
@@ -292,7 +264,6 @@ marquee {
             <div class="project">
               <img src="images_/partneropen.png">
               <h3>A0_Partnerships.psd</h3>
-              <p>Australian Open Partnerships</p>
             </div>
           </a>
 
@@ -300,7 +271,6 @@ marquee {
             <div class="project">
               <img src="images_/matesvilleopen.png">
               <h3>MatesV1lle.co</h3>
-              <p>Responsible Gambling Campaign</p>
             </div>
           </a>
 
@@ -308,48 +278,30 @@ marquee {
             <div class="project">
               <img src="images_/pinkpom.png">
               <h3>P1nkP0ms.zip</h3>
-              <p>Melanoma Patients Australia</p>
             </div>
           </a>
 
         </div>
 
       </div>
-
-    </div>
-
-    <div class="window">
-
-      <div class="window-header">
-        <span>COMMENTS</span>
-        <span>✕</span>
-      </div>
-
-      <div class="window-content">
-
-        <div class="guestbook-entry">
-          <strong>very_imp0rtant_creative_director_92:</strong><br>
-          wow ur hired!
-        </div>
-
-        <div class="guestbook-entry">
-          <strong>coolagencygirl:</strong><br>
-          omg i luv ur work ! &lt;3
-        </div>
-
-      </div>
-
     </div>
 
   </div>
 
 </div>
 
-<img class="sticker" src="https://media.tenor.com/DimzPZMypFcAAAAj/laptop.gif">
-
-<audio autoplay loop>
-  <source src="audio_/home/BREEZIN'.mp3" type="audio/mpeg">
+<!-- AUDIO -->
+<audio id="bgmusic" loop>
+  <source src="audio_/home/BREEZIN.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+document.getElementById("playMusic").addEventListener("click", function () {
+  const music = document.getElementById("bgmusic");
+  music.play();
+  this.innerHTML = "♫ NOW PLAYING";
+});
+</script>
 
 </body>
 </html>
