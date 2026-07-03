@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Campaign 02</title>
+
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= LOADING SCREEN ================= */
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: lime;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: VT323, monospace;
+  font-size: 30px;
+  z-index: 9999;
+}
+
+.loader-box {
+  text-align: center;
+  border: 3px ridge lime;
+  padding: 20px;
+  background: #111;
+}
+
+.blink {
+  animation: blink 0.8s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+/* ================= PAGE STYLE ================= */
+
+body {
+  background: cyan;
+  color: white;
+  font-family: Verdana;
+  padding: 40px;
+}
+
+.window {
+  border: 3px ridge lime;
+  padding: 20px;
+  background: #111;
+}
+
+h1 {
+  font-family: VT323;
+  color: magenta;
+  font-size: 40px;
+}
+
+a {
+  color: cyan;
+}
+
+/* ================= GALLERY FIXED ================= */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border: 3px ridge magenta;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-box">
+    <p>loading CAMPAIGN_02.exe...</p>
+    <p class="blink">syncing sponsor assets...</p>
+  </div>
+</div>
+
+<!-- BACK LINK -->
+<a href="index.html">← back to home</a>
+
+<div class="window">
+  <a href="index.html">← back home</a>
+
+  <h1>CAMPAIGN 02: AUSTRALIAN OPEN PARTNERSHIPS</h1>
+
+  <p>
+    <strong>Challenge:</strong>
+    Incorporate Aus Open sponsors into the experience without interrupting the fans.
+  </p>
+
+  <p>
+    <strong>Insight:</strong>
+    Fans don't want ad interruptions, they want enhancers.
+  </p>
+
+  <p>
+    <strong>Idea:</strong>
+    Be a part of the open, not sticking out of it. Incorporate Aus Open playfulness with leading sponsors.
+  </p>
+
+  <div class="gallery">
+
+    <img src="images_/project2/image11.png">
+    <img src="images_/project2/image22.png">
+    <img src="images_/project2/image33.png">
+    <img src="images_/project2/image44.png">
+    <img src="images_/project2/image55.png">
+    <img src="images_/project2/image66.png">
+
+  </div>
+
+</div>
+
+<!-- LOADING SCRIPT -->
+<script>
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      document.getElementById("loader").style.display = "none";
+    }, 1500);
+  });
+</script>
+
+</body>
+
+</html>

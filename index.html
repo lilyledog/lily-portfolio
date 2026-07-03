@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LILY LE MIERE.exe</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+  box-sizing: border-box;
+  cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
+}
+
+body {
+  margin: 0;
+  background:
+    url("https://www.transparenttextures.com/patterns/stardust.png"),
+    linear-gradient(#0400ff, #000);
+  color: white;
+  font-family: Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+
+.header {
+  background: linear-gradient(90deg, hotpink, cyan, lime);
+  padding: 20px;
+  border-bottom: 4px ridge white;
+  text-align: center;
+  animation: flash 4s infinite linear;
+}
+
+@keyframes flash {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.header h1 {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+  text-shadow: 4px 4px black;
+}
+
+.status {
+  margin-top: 15px;
+  font-family: 'VT323', monospace;
+  font-size: 28px;
+  color: yellow;
+}
+
+/* LAYOUT */
+
+.container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  background: rgba(0,0,0,0.7);
+  border: 3px outset #ccc;
+  padding: 15px;
+}
+
+.profile-pic {
+  width: 100%;
+  border: 4px ridge hotpink;
+}
+
+.about-button {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 12px;
+  text-align: center;
+  background: black;
+  border: 3px ridge hotpink;
+  color: lime;
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.about-button:hover {
+  background: hotpink;
+  color: black;
+}
+
+.music-player {
+  margin-top: 20px;
+  background: black;
+  padding: 10px;
+  border: 2px inset white;
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  color: lime;
+}
+
+.counter {
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+  color: cyan;
+}
+
+/* MAIN */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.window {
+  background: #c0c0c0;
+  color: black;
+  border: 3px outset white;
+  box-shadow: 8px 8px 0px black;
+}
+
+.window-header {
+  background: linear-gradient(to right, navy, blue);
+  color: white;
+  padding: 8px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.window-content {
+  padding: 15px;
+}
+
+/* PROJECTS */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.projects a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project {
+  background: white;
+  border: 3px ridge hotpink;
+  padding: 10px;
+  transition: 0.2s;
+}
+
+.project:hover {
+  transform: rotate(-2deg) scale(1.03);
+}
+
+/* ✅ FIXED IMAGE RULE */
+.project img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background: white;
+}
+
+/* COMMENTS */
+
+.guestbook-entry {
+  background: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px dashed blue;
+}
+
+/* STICKER */
+
+.sticker {
+  position: fixed;
+  width: 100px;
+  right: 20px;
+  bottom: 20px;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* MARQUEE */
+
+marquee {
+  background: yellow;
+  color: red;
+  padding: 10px;
+  font-weight: bold;
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+}
+
+@media(max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<marquee scrollamount="12">
+★ WELCOME TO MY DIGITAL BRAIN ★ BEST VIEWED ON INTERNET EXPLORER ★
+</marquee>
+
+<div class="header">
+
+  <h1>LILYLEMIERE.COM</h1>
+
+  <div class="status">
+    currently listening to: Masayoshi Takanaka ✩°｡⋆
+  </div>
+
+</div>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <img class="profile-pic" src="images_/My face.jpg">
+
+    <a href="about.html" class="about-button">
+      ABOUT_ME.exe
+    </a>
+
+    <p>
+      creative advertiser <br>
+      artist <br>
+      music maestro <br>
+      beer enthusiast
+    </p>
+
+    <div class="music-player">
+      ▶ NOW PLAYING <br>
+      BREEZIN'.mp3
+    </div>
+
+    <div class="counter">
+      visitor count: 000709
+    </div>
+
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <div class="window">
+
+      <div class="window-header">
+        <span>TOP PROJECTS.exe</span>
+        <span>✕</span>
+      </div>
+
+      <div class="window-content">
+
+        <div class="projects">
+
+          <a href="project-1.html">
+            <div class="project">
+              <img src="images_/aoopen.jpg">
+              <h3>Aus_0p3n.zip</h3>
+              <p>Australian Open "Hits Different"</p>
+            </div>
+          </a>
+
+          <a href="project-2.html">
+            <div class="project">
+              <img src="images_/partneropen.jpg">
+              <h3>A0_Partnerships.psd</h3>
+              <p>Australian Open Partnerships</p>
+            </div>
+          </a>
+
+          <a href="project-3.html">
+            <div class="project">
+              <img src="images_/matesvilleopen.jpg">
+              <h3>MatesV1lle.co</h3>
+              <p>Responsible Gambling Campaign</p>
+            </div>
+          </a>
+
+          <a href="project-4.html">
+            <div class="project">
+              <img src="images_/pinkpom.jpg">
+              <h3>P1nkP0ms.zip</h3>
+              <p>Melanoma Patients Australia</p>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="window">
+
+      <div class="window-header">
+        <span>COMMENTS</span>
+        <span>✕</span>
+      </div>
+
+      <div class="window-content">
+
+        <div class="guestbook-entry">
+          <strong>very_imp0rtant_creative_director_92:</strong><br>
+          wow ur hired!
+        </div>
+
+        <div class="guestbook-entry">
+          <strong>coolagencygirl:</strong><br>
+          omg i luv ur work ! &lt;3
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<img class="sticker" src="https://media.tenor.com/DimzPZMypFcAAAAj/laptop.gif">
+
+<audio autoplay loop>
+  <source src="audio_/home/BREEZIN'.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Campaign 04 | Pink Poms</title>
+
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= LOADING SCREEN ================= */
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: lime;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: VT323, monospace;
+  font-size: 30px;
+  z-index: 9999;
+}
+
+.loader-box {
+  text-align: center;
+  border: 3px ridge lime;
+  padding: 20px 40px;
+  background: #111;
+}
+
+.blink {
+  animation: blink 0.8s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+/* ================= PAGE STYLE ================= */
+
+body {
+  background: black;
+  color: white;
+  font-family: Verdana, sans-serif;
+  padding: 40px;
+}
+
+a {
+  color: cyan;
+  text-decoration: none;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+.window {
+  border: 3px ridge lime;
+  padding: 25px;
+  background: #111;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-family: VT323, monospace;
+  color: lime;
+  font-size: 48px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  border: 3px ridge cyan;
+}
+
+/* ================= VERTICAL VIDEO ================= */
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 177.78%; /* vertical 9:16 */
+  margin-top: 40px;
+  border: 3px ridge hotpink;
+  background: black;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= LOADING SCREEN ================= -->
+
+<div id="loader">
+
+  <div class="loader-box">
+
+    <p>Loading PinkPoms.exe...</p>
+
+    <p class="blink">applying SPF 50+ protection...</p>
+
+  </div>
+
+</div>
+
+<!-- ================= CONTENT ================= -->
+
+<a href="index.html">← Back to Home</a>
+
+<br><br>
+
+<div class="window">
+
+<h1>CAMPAIGN 04: PINK POMS</h1>
+
+<p>
+<strong>Challenge:</strong><br>
+Work with Melanoma Patients Australia to encourage travellers and expats to use sun protection.
+</p>
+
+<p>
+<strong>Insight:</strong><br>
+The English burn to a crisp.
+</p>
+
+<p>
+<strong>Idea:</strong><br>
+No one likes a pink pom. Poke fun at our English counterparts while encouraging sun protection.
+</p>
+
+<!-- ================= GALLERY ================= -->
+
+<div class="gallery">
+
+<img src="images_/project4/image1111.png">
+<img src="images_/project4/image2222.png">
+<img src="images_/project4/image3333.png">
+
+</div>
+
+<!-- ================= VIMEO VIDEO ================= -->
+
+<div class="video-container">
+
+<iframe
+src="https://player.vimeo.com/video/1206685572?badge=0&autopause=0&player_id=0&app_id=58479"
+allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+allowfullscreen
+title="Burnt to a Crisp">
+</iframe>
+
+</div>
+
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<script>
+
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    document.getElementById("loader").style.display = "none";
+  }, 1500);
+});
+
+</script>
+
+</body>
+
+</html>
